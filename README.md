@@ -27,35 +27,66 @@ As you can see Sass can add alot of functionality to css to improve front end de
 
 ## Common Myths
 
-There are alot of common misconseptions about Sass so let's debunk those. 
+There are alot of common misconseptions about Sass but let us tackle the biggest ones.
 
-- Sass will change the way I write css entirely.
+- Sass will change the way I write css entirely
+- Sass is messy code.
+- Sass will make my site less compatible across browsers.
 
-Sass is no different then standard css in 90% on its syntax. In fact Sass has devoted to be compatible with ALL versions of css. 
+### The Truth
+
+Sass is no different then standard css in 90% of its syntax. In fact Sass has devoted to be compatible with ALL versions of css. 
 
 Here is standard css.
 
 ``` css 
     Article{ font-family: helvetica; }
-    h1{ color: #333377;}
-    p{ color: #333377;}
-    P:hover{ color: #cc3333;}
+    Article h1{ color: #333377;}
+    Article p{ color: #333377;}
+    Article p:hover{ color: #cc3333;}
 
 ```
 And here is Sass.
 ```scss 
-    $main: #333377;
+    $mainColor: #333377;
     
     Article{
         font-family: helvetica;
-        h1{ color: $main;}
-        p{ color: $main;
+        h1{ color: $mainColor;}
+        p{ color: $mainColor;
         &:hover{ color: #cc3333;}
         }  
     }
     
 ```
+As you can see Sass reads the same as standard css but instead of calling each parent container you can nest the children elements inside the css! So much cleaner to read alrady. 
 
-## Installation
+Did you also notice the amazing $ symbol? We were able to save that color as a variable to call in our properties. This means we can from one location update multiple css elements! This is only a few of the way that Sass can help you step up your css game.
+
+## How does Sass work?
+
+Sass takes your written Scss file and compiles it into css to be used in your site. There are a couple ways to do this, but we will be showing you the simplest way in terminal. 
+
+### Installation
 
 Sass can be installed globally via homebrew! 
+
+
+#### In terminal run
+```bash
+$ brew install sass/sass/sass
+```
+
+This will allow us to run the Sass commands to compile the Sass into regular Css. You'll need to tell Sass which file to build from, and where to output CSS to. For example, running
+
+ ```bash 
+ sass input.scss output.css 
+ ``` 
+ 
+ will take a single Sass file, input.scss, and compile that file to output.css.
+
+You can also watch individual files or directories with the --watch flag. The watch flag tells Sass to watch your source files for changes, and re-compile CSS each time you save your Sass. If you wanted to watch (instead of manually build) your input.scss file, you'd just add the watch flag to your command, like so:
+
+```bash
+sass --watch input.scss output.css
+```
