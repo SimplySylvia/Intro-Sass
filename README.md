@@ -55,3 +55,7 @@ And here is Sass.
     }
     
 ```
+
+## Installation
+
+Sass can be installed globally via homebrew! 
