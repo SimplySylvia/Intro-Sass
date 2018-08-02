@@ -14,6 +14,8 @@
 - Understand how variables and nesting works.  
 - Can use cmd line to initialize and compile projects.
 
+***
+
 ## Overview
 
 #### What is Sass? 
@@ -40,17 +42,17 @@ Sass is no different then standard css in 90% of its syntax. In fact Sass has de
 Here is standard css.
 
 ``` css 
-    Article{ font-family: helvetica; }
-    Article h1{ color: #333377;}
-    Article p{ color: #333377;}
-    Article p:hover{ color: #cc3333;}
+    article{ font-family: helvetica; }
+    article h1{ color: #333377;}
+    article p{ color: #333377;}
+    article p:hover{ color: #cc3333;}
 
 ```
 And here is Sass.
 ```scss 
     $mainColor: #333377;
     
-    Article{
+    article{
         font-family: helvetica;
         h1{ color: $mainColor;}
         p{ color: $mainColor;
@@ -63,11 +65,13 @@ As you can see Sass reads the same as standard css but instead of calling each p
 
 Did you also notice the amazing $ symbol? We were able to save that color as a variable to call in our properties. This means we can from one location update multiple css elements! This is only a few of the way that Sass can help you step up your css game.
 
+***
+
 ## How does Sass work?
 
 Sass takes your written Scss file and compiles it into css to be used in your site. There are a couple ways to do this, but we will be showing you the simplest way in terminal. 
 
-### Installation
+### Installation and Use
 
 Sass can be installed globally via homebrew! 
 
@@ -77,16 +81,38 @@ Sass can be installed globally via homebrew!
 $ brew install sass/sass/sass
 ```
 
-This will allow us to run the Sass commands to compile the Sass into regular Css. You'll need to tell Sass which file to build from, and where to output CSS to. For example, running
+This will allow us to run the Sass commands to compile the Sass into regular Css. You'll need to tell Sass which file to build from, and where to output CSS to. For example, running 
 
  ```bash 
- sass input.scss output.css 
+ $ sass input.scss output.css 
  ``` 
  
- will take a single Sass file, input.scss, and compile that file to output.css.
+ inside your project folder will take a single Sass file, input.scss, and compile that file to output.css.
 
 You can also watch individual files or directories with the --watch flag. The watch flag tells Sass to watch your source files for changes, and re-compile CSS each time you save your Sass. If you wanted to watch (instead of manually build) your input.scss file, you'd just add the watch flag to your command, like so:
 
 ```bash
-sass --watch input.scss output.css
+$ sass --watch input.scss output.css
 ```
+If you are looking to do all of your Sass and css files together you can set the input and output as you directories. 
+```
+$ sass --watch app/sass:public/stylesheets
+```
+Once Sass is running you will see this.
+
+<img src='assets/watchingSass.png' alt='output'/>
+
+***
+
+## The Benefits of Being Sassy
+
+Next we are going to break down the advantages that Sass brings to the table. 
+
+### Variables 
+
+Currently in css the only way to style several elements together is to either use an existing css library or manually style every element one at a time. Which is fine when you are working on a small project, but imagine the complications that arise when you have a large scale project and you have to update several places. 
+
+To wrap our heads around this we will be looking at the Bulma Css file and how they went around using variables to
+Let's take a look at what a large css file looks like. 
+[Bulma Css](https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css)
+
