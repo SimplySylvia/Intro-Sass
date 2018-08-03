@@ -138,5 +138,152 @@ body{
 
 ```
 
+### Practice 
+
+Clone down this repo and let's play with the starter-code. 
+
+Inside you will find a beautiful blanket html along with a main.scss and main.css . For this practice we will be dealing with the main.scss . 
+
+*Hint (Make sure you run the Sass command so your Sass will auto compile into your css)*
+
+Right now as we look at our scss file we see some repeating colors.
+
+One example.
+```scss
+
+header{
+    width: 100vw;
+    display: block;
+    text-align: center;
+    color: white;
+    background-color: aquamarine;
+    margin-top: 0;
+    padding: 1em; 
+}
+
+footer {
+    width: 100vw;
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+```
+
+If we wanted to change the colors of our site we would have to go to every instance and change it. Let's create a variable and store that color. 
+
+```scss
+
+$primary-color: aquamarine;
+
+header{
+    width: 100vw;
+    display: block;
+    text-align: center;
+    color: white;
+    background-color: $primary-color;
+    margin-top: 0;
+    padding: 1em; 
+}
+
+footer {
+    width: 100vw;
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+    background-color: $primary-color;
+}
+
+```
+
+Now when we change the variable it will reflect across ALL instances! Saving but time and making our develoment more effeciant. 
+Go throughout all the css and combine as many similar attributes into variables as you can. Then adjust the variables to reflect the styles of your choice. 
+
+So easy its like magic! 
+
+<img src='https://media.giphy.com/media/wAjfQ9MLUfFjq/giphy.gif' alt='amazed gif' width='250px'>
+
+***
+
+### Nesting
+
+Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML. 
+
+**WARNING**
+
+Be aware that overly nested rules will result in over-qualified CSS that could prove hard to maintain and is generally considered bad practice.
+
+That being said lets look at how our current scss looks in the start code. 
+
+```scss
+article {
+    background-color: $article-color;
+    width: 47vw;
+}
+article img{
+    width: 100%;
+}
+article h2{
+    background-color: black;
+    color: $header-font;
+    text-align: center;
+    margin-bottom: 0;
+    padding: .3em;
+}
+article p {
+    padding: .5em;
+}
+
+```
+
+Yikes! So much repeating code! Let's use Sass nesting to dry it up. 
+
+```scss
+article {
+    background-color: $article-color;
+    width: 47vw;
+    img{
+    width: 100%;
+    }
+    h2{
+    background-color: black;
+    color: $header-font;
+    text-align: center;
+    margin-bottom: 0;
+    padding: .3em;
+    }
+    p {
+    padding: .5em;
+    }
+}
+```
+
+With this new structure it is very clear to see the inheritance of css properties. 
+Go through the starter code and nest all children css properties with their parents. 
+
+**BUT WAIT!** How does this compile in css? 
 
 
+```css
+article {
+    background-color: $article-color;
+    width: 47vw;
+}
+article img{
+    width: 100%;
+}
+article h2{
+    background-color: black;
+    color: $header-font;
+    text-align: center;
+    margin-bottom: 0;
+    padding: .3em;
+}
+article p {
+    padding: .5em;
+}
+
+```
+Exactly the way it was. Nesting Css is a great tool for us as developers to clearly see how css is being applied. 
+For small projects this probably isnt a big deal. But for large scale applications it can be a life saver. 

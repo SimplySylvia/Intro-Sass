@@ -1,7 +1,62 @@
-article{
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100vw;
+    display: block;
+    text-align: center;
+    color: white;
+    background-color: aquamarine;
+    margin-top: 0;
+    padding: 1em; 
+}
+
+header h1 {
+    margin-top: 0;
+}
+
+header img{
+    width: 75px;
+}
+
+article {
     background-color: aliceblue;
-    h2{
-        background-color: black;
-        color: white;
-    }
+    width: 47vw;
+}
+
+article img{
+    width: 100%;
+}
+
+article h2{
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+    padding: .3em;
+
+}
+
+article p {
+    padding: .5em;
+}
+
+main {
+    display: flex;
+}
+
+main section {
+    margin: 1em;
+}
+
+footer {
+    width: 100vw;
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+    background-color: aquamarine;
 }
