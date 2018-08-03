@@ -204,6 +204,12 @@ So easy its like magic!
 
 <img src='https://media.giphy.com/media/wAjfQ9MLUfFjq/giphy.gif' alt='amazed gif' width='250px'>
 
+### Additional resource 
+
+Check out this fun scss project and adjust the $color1 and $color2 to really see the power of assigning variables.
+
+[Submarine Codepen](https://codepen.io/ajerez/pen/EaEEOW)
+
 ***
 
 ### Nesting
@@ -287,3 +293,10 @@ article p {
 ```
 Exactly the way it was. Nesting Css is a great tool for us as developers to clearly see how css is being applied. 
 For small projects this probably isnt a big deal. But for large scale applications it can be a life saver. 
+
+***
+
+### Partials & Imports
+
+
+
