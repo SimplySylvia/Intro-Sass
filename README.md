@@ -1,5 +1,7 @@
 # Intro to Sass
 
+<img src='https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg' width='300px'>
+
 ### LEARNING OBJECTIVES
 *After this lesson, you will be able to:*
 
@@ -112,7 +114,29 @@ Next we are going to break down the advantages that Sass brings to the table.
 
 Currently in css the only way to style several elements together is to either use an existing css library or manually style every element one at a time. Which is fine when you are working on a small project, but imagine the complications that arise when you have a large scale project and you have to update several places. 
 
-To wrap our heads around this we will be looking at the Bulma Css file and how they went around using variables to
-Let's take a look at what a large css file looks like. 
+To wrap our heads around this we will be looking at the Bulma Css file and how they went about using variables to streamline their css file. 
+
 [Bulma Css](https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css)
+
+Now let's look how they established variables to quickly create themes with the same css base.
+
+[Bulma Sass](https://bulma.io/documentation/customize/variables/)
+
+#### Creating variables
+
+With the power of variables you can store things like colors, font stacks, or any CSS value you think you'll want to reuse. Sass uses the $ symbol to make something a variable. Here's an example:
+
+```scss
+
+$primary-font: Helvetica, sans-serif;
+$primary-color: #777;
+
+body{
+    font: $primary-font;
+    color: $primary-color;
+}
+
+```
+
+
 
