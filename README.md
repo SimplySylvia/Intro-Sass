@@ -296,7 +296,44 @@ For small projects this probably isnt a big deal. But for large scale applicatio
 
 ***
 
+Now lets jump into some more advanced topics. 
+
 ### Partials & Imports
 
+#### Partials
 
+A partial is a small snippet of css saved into a seperate sass file for use of importing into other files. The main use of this is to modularize your code and make it easier to manage. To create a partial you simply name your Sass file with a leading underscore.
 
+```
+_partial.scss
+```
+This underline tells Sass that this is a file that awaits an import before being compiled into a css file. 
+
+#### Import
+
+The import abilty allows us to import partials into our Sass code. 
+
+With standard css everytime you use @import it creates an HTTP request for each css file. Sass improves this by compiling the partials into one css file so the browser only runs a sigle HTTP request. Simple to use and effeciant. 
+
+##### How to use 
+
+To import a partial you will be using the @import property. 
+
+Let's test it out! Add the following line to your main.scss 
+
+```scss
+
+@import 'base';
+
+```
+If you imported correctly you will see the css inside of _base.scss applied to your css file. But, wait...
+
+Why did we just put 'base' instead of _base.scss? Sass is smart enough to know that by using import you are requesting a partial and will automatically call upon the correct file without having to be so exact saving coding time once again! 
+
+So where does the css go that you import? 
+
+Where ever you import the partial it will be added into the css at that level. With that ability you can easily save several partials and call upon them inside your code and know as a fact that it will be where you want to render. 
+
+***
+
+### Mixins
