@@ -336,4 +336,6 @@ Where ever you import the partial it will be added into the css at that level. W
 
 ***
 
-### Mixins
+### Extend/Inheritance
+
+
