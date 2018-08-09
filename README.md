@@ -24,6 +24,8 @@
 
 Sass is an extension of CSS that adds power and elegance to the basic language. It allows you to use variables, nested rules, mixins, inline imports, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized, and get small stylesheets up and running quickly, particularly with the help of the Compass style library.
 
+[Compass Library](http://compass-style.org/)
+
 As you can see Sass can add alot of functionality to css to improve front end development life.
 
 ##### So let's get Sassy! 
@@ -31,7 +33,7 @@ As you can see Sass can add alot of functionality to css to improve front end de
 
 ## Common Myths
 
-There are alot of common misconseptions about Sass but let us tackle the biggest ones.
+There are alot of common misconceptions about Sass but let us tackle the biggest ones.
 
 - Sass will change the way I write css entirely
 - Sass is messy code.
@@ -65,7 +67,7 @@ And here is Sass.
 ```
 As you can see Sass reads the same as standard css but instead of calling each parent container you can nest the children elements inside the css! So much cleaner to read alrady. 
 
-Did you also notice the amazing $ symbol? We were able to save that color as a variable to call in our properties. This means we can from one location update multiple css elements! This is only a few of the way that Sass can help you step up your css game.
+Did you also notice the amazing $ symbol? We were able to save that color as a variable to call in our properties. This means we can from one location update multiple css elements! This is only a few of the ways that Sass can help you step up your css game.
 
 ***
 
@@ -197,7 +199,7 @@ footer {
 
 ```
 
-Now when we change the variable it will reflect across ALL instances! Saving but time and making our develoment more effeciant. 
+Now when we change the variable it will reflect across ALL instances! Saving time and making our develoment more efficiant. 
 Go throughout all the css and combine as many similar attributes into variables as you can. Then adjust the variables to reflect the styles of your choice. 
 
 So easy its like magic! 
@@ -313,7 +315,7 @@ This underline tells Sass that this is a file that awaits an import before being
 
 The import abilty allows us to import partials into our Sass code. 
 
-With standard css everytime you use @import it creates an HTTP request for each css file. Sass improves this by compiling the partials into one css file so the browser only runs a sigle HTTP request. Simple to use and effeciant. 
+With standard css everytime you use @import it creates an HTTP request for each css file. Sass improves this by compiling the partials into one css file so the browser only runs a single HTTP request. Simple to use and efficiant. 
 
 ##### How to use 
 
@@ -408,7 +410,3 @@ aside {
 }
 
 ```
-
-***
-
-### Mixins
