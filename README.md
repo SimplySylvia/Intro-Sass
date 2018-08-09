@@ -338,4 +338,77 @@ Where ever you import the partial it will be added into the css at that level. W
 
 ### Extend/Inheritance
 
+This is one of the coolest features dealing with Sass. Using @extend lets you share a set of CSS properties from one selector to another. In other words you basically create a variable object that hold css properties! This is a great way to keep your css very DRY and well organized. 
 
+Syntax 
+
+```scss
+
+%alert-style {
+    width: 20vw;
+    height: 20vh;
+}
+
+.message{
+    @extend %alert-style;
+    background-color: white;
+}
+
+.error{
+    @extend %alert-style;
+    background-color: red;
+}
+
+```
+
+Because we are 'extending' the styles of alert-style we can have the message and error classes inherit said styles. 
+
+***
+
+### Operators 
+
+That's right we can do math in css! 
+
+![wat](https://media.giphy.com/media/tu54GM19sqJOw/giphy.gif)
+
+This is more useful then you might think. Sass has a handful of standard math operators like +, -, *, /, and %. With these operators we can create more dynamic css. As an example we will use it to calculate the sizes for an article and an aside. 
+
+```scss
+
+.container { width: 100%; }
+
+article {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside {
+  float: right;
+  width: 300px / 960px * 100%;
+}
+
+```
+
+What we were able to do was create a grid based on 960px and convert them into exact percentages. When the sass renders out it will look like so..
+
+```css
+
+.container {
+  width: 100%;
+}
+
+article {
+  float: left;
+  width: 62.5%;
+}
+
+aside {
+  float: right;
+  width: 31.25%;
+}
+
+```
+
+***
+
+### Mixins
